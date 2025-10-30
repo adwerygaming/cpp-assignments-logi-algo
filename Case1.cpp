@@ -13,10 +13,10 @@ int main() {
     float grade = 100;
 
     cout << "Masukkan Nama Matkul : "; 
-    getline(cin)
+    getline(cin, assignment);
 
     cout << "Masukkan NPM Mahasiswa : "; 
-    cin >> student_npm;
+    getline(cin, student_npm);
 
     cout << "Masukkan Nilai : "; 
     cin >> grade;
