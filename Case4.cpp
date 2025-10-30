@@ -2,18 +2,18 @@
 using namespace std;
 
 int main() {
-    int batLvl = 100;
-    // Map battery level to a category and use switch-case for decisions.
-    // Category mapping:
-    // 0 -> <= 10 (critical)
-    // 1 -> 11..30 (watch out)
-    // 2 -> 31..50 (suggestion)
-    // 3 -> > 50 (ok)
-    enum kondisi;
-    if (batLvl <= 10) kondisi = 0;
-    else if (batLvl <= 30) kondisi = 1;
-    else if (batLvl <= 50) kondisi = 2;
-    else kondisi = 3;
+    int batLvl = 30;
+
+    enum SemuaKondisiBaterai {
+        KRITIS,
+        AWAS,
+        AMAN,
+        PENUH
+    };
+
+    SemuaKondisiBaterai kondisi; 
+
+    (batLvl <= 10) ? kondisi = KRITIS : (batLvl <= 30) ? kondisi = AWAS : (batLvl <= 50) ? kondisi = AMAN : kondisi = PENUH;
 
     switch (kondisi) {
         case 0:
