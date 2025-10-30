@@ -8,9 +8,18 @@ using namespace std;
 
 int main() {
     // Deklarasi Variabel
-    const string assignment = "Logika & Algoritma";
-    const string student_npm = "25.12.3654";
-    const float grade = 100;
+    string assignment = "Logika & Algoritma";
+    string student_npm = "25.12.3654";
+    float grade = 100;
+
+    cout << "Masukkan Nama Matkul : "; 
+    getline(cin)
+
+    cout << "Masukkan NPM Mahasiswa : "; 
+    cin >> student_npm;
+
+    cout << "Masukkan Nilai : "; 
+    cin >> grade;
 
     // Logika
     // Jika assignment kosong ATAU npm kosong ATAU nilai kurang dari 0 (-1 ke bawah)
