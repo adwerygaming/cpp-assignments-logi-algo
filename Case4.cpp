@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int batLvl = 30;
+    int batLvl = 0;
 
     enum SemuaKondisiBaterai {
         KRITIS,
@@ -14,6 +14,11 @@ int main() {
     SemuaKondisiBaterai kondisi; 
 
     (batLvl <= 10) ? kondisi = KRITIS : (batLvl <= 30) ? kondisi = AWAS : (batLvl <= 50) ? kondisi = AMAN : kondisi = PENUH;
+
+    if (batLvl <= 10) kondisi = KRITIS;
+    else if (batLvl <= 30) kondisi = AWAS;
+    else if (batLvl <= 50) kondisi = AMAN;
+    else kondisi = PENUH;
 
     switch (kondisi) {
         case 0:
