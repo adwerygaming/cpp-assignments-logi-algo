@@ -8,9 +8,9 @@ using namespace std;
 
 int main() {
     // Deklarasi Variabel
-    string assignment = "Logika & Algoritma";
-    string student_npm = "25.12.3654";
-    float grade = 100;
+    string assignment;
+    string student_npm;
+    float grade;
 
     cout << "Masukkan Nama Matkul : "; 
     getline(cin, assignment);
