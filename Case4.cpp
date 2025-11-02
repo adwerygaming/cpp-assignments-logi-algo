@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Program Mesin Kopi Sederhana
+ * 
+ * @return int 
+ */
+
 int main() {
     int opt;
 

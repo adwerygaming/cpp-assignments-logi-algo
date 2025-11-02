@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Program ATM Sederhana
+ * 
+ * @return int 
+ */
+
 int main() {
     int opt;
 
@@ -65,7 +71,7 @@ int main() {
             saldo -= transfer;
             cout << "Berhasil mentransfer Rp. " << transfer << " ke rekening " << rekening << endl;
         }
-        
+
         break;
     }
 

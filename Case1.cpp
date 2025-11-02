@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// Membuat Fungsi Memberikan Nilai Kepada Mahasiswa
-// Dengan Nama Mata Kuliah, NPM dan Nilai.
-
-// 1 IF Statement
+/**
+ * @brief Program Validasi Input dan Pemberian Nilai pada Mahasiswa
+ * 
+ * @return int 
+ */
 
 int main() {
     // Deklarasi Variabel

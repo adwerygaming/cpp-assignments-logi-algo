@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Program Penilaian Mahasiswa dari Nilai Angka ke Huruf
+ * 
+ * @return int 
+ */
+
 int main() {
     float grade;
 
