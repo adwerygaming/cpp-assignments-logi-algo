@@ -52,6 +52,7 @@ int main() {
         cin >> setor;
 
         cout << "Berhasil setor tunai: Rp. " << setor << endl;
+        cout << "Saldo Anda sekarang adalah: Rp. " << saldo + setor << endl;
         break;
     }
 
@@ -76,6 +77,7 @@ int main() {
     }
 
     default:
+        cout << "Pilihan tidak tersedia." << endl; 
         break;
     }
 

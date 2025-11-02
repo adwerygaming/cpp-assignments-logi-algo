@@ -22,15 +22,11 @@ int main() {
     cout << "Masukkan Nilai : "; 
     cin >> grade;
 
-    // Logika
-    // Jika assignment kosong ATAU npm kosong ATAU nilai kurang dari 0 (-1 ke bawah)
     if (assignment.empty() || student_npm.empty() || grade < 0) {
-        // Maka tolak
         cout << "Mohon untuk mencantumkan informasi assignment, student_npm dan grade. Semua harus lengkap." << endl;
         return 0;
     }
 
-    // Jika tidak, lanjut memberikan nilai.
     cout << "Memberikan nilai " << grade << " pada mahasiswa dengan NPM " << student_npm << " di tugas " << assignment << endl;
     return 0;
 }
