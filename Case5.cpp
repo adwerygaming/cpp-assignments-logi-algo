@@ -2,45 +2,74 @@
 using namespace std;
 
 int main() {
-    // membeli montor
     int opt;
 
-    cout << "Dearah Motor" << endl;
-    cout << "Silahkan pilih motor yang di inginkan." << endl;
+    cout << "ATM Bank XYZ" << endl;
+    cout << "Silahkan pilih layanan yang di inginkan." << endl;
     cout << "" << endl;
-    cout << "[1] Honda" << endl;
-    cout << "[2] Yamaha" << endl;
-    cout << "[3] Suzuki" << endl;
-    cout << "[4] Kawasaki" << endl;
-    cout << "[5] Ducati" << endl;
+    cout << "[1] Cek Saldo" << endl;
+    cout << "[2] Tarik Tunai" << endl;
+    cout << "[3] Setor Tunai" << endl;
+    cout << "[4] Transfer" << endl;
     cout << "" << endl;
+
+    int saldo = 10000000;
 
     cout << "Masukkan Pilihan: ";
     cin >> opt;
 
     switch (opt) {
-    case 1:
-        cout << "Berhasil membeli montor Honda." << endl;
+    case 1: {
+        cout << "Saldo Anda adalah: Rp. " << saldo << endl;
         break;
+    }
 
-    case 2:
-        cout << "Berhasil membeli montor Yamaha." << endl;
-        break;
+    case 2: {
+        int tarik;
+        cout << "Masukkan jumlah tarik tunai: ";
+        cin >> tarik;
 
-    case 3:
-        cout << "Berhasil membeli montor Suzuki." << endl;
-        break;
+        if (tarik > saldo) {
+            cout << "Saldo tidak cukup untuk menarik tunai: Rp. " << tarik << endl;
+        } else {
+            saldo -= tarik;
+            cout << "Berhasil menarik tunai: Rp. " << tarik << endl;
+        }
 
-    case 4:
-        cout << "Berhasil membeli montor Kawasaki." << endl;
         break;
+    }
 
-    case 5:
-        cout << "Berhasil membeli montor Ducati." << endl;
+    case 3: {
+        int setor;
+
+        cout << "Masukkan jumlah setor tunai: ";
+        cin >> setor;
+
+        cout << "Berhasil setor tunai: Rp. " << setor << endl;
         break;
+    }
+
+    case 4: {
+        string rekening;
+        int transfer;
+
+        cout << "Masukkan nomor rekening tujuan: ";
+        cin >> rekening;
+
+        cout << "Masukkan jumlah transfer: ";
+        cin >> transfer;
+
+        if (transfer > saldo) {
+            cout << "Saldo tidak cukup untuk mentransfer Rp. " << transfer << endl;
+        } else {
+            saldo -= transfer;
+            cout << "Berhasil mentransfer Rp. " << transfer << " ke rekening " << rekening << endl;
+        }
+        
+        break;
+    }
 
     default:
-        cout << "Pilihan tidak tersedia." << endl;
         break;
     }
 
