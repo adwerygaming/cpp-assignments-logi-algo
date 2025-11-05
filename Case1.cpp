@@ -13,6 +13,7 @@ int main() {
     string student_npm;
     float grade;
 
+    // Mengambil Input dari User
     cout << "Masukkan Nama Matkul : "; 
     getline(cin, assignment);
 
@@ -22,11 +23,14 @@ int main() {
     cout << "Masukkan Nilai : "; 
     cin >> grade;
 
+    // Logika Validasi Input
     if (assignment.empty() || student_npm.empty() || grade < 0) {
+        // Jika ada input yang kosong atau nilai negatif, tampilkan pesan error
         cout << "Mohon untuk mencantumkan informasi assignment, student_npm dan grade. Semua harus lengkap." << endl;
         return 0;
     }
 
+    // Jika semua input valid, tampilkan pesan pemberian nilai
     cout << "Memberikan nilai " << grade << " pada mahasiswa dengan NPM " << student_npm << " di tugas " << assignment << endl;
     return 0;
 }

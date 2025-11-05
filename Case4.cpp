@@ -8,42 +8,40 @@ using namespace std;
  */
 
 int main() {
+    // Deklarasi Variabel
     int opt;
 
+    // Menampilkan Menu Pilihan Kopi
     cout << "Mesin Kopi" << endl;
     cout << "Silahkan pilih kopi yang di inginkan." << endl;
     cout << "" << endl;
     cout << "[1] Cappucino" << endl;
     cout << "[2] Amerikano" << endl;
     cout << "[3] Espresso" << endl;
-    cout << "[4] Late" << endl;
-    cout << "[5] Moccacino" << endl;
     cout << "" << endl;
 
+    // Mengambil Input dari User
     cout << "Masukkan Pilihan: ";
     cin >> opt;
 
+    // Logika Pemilihan Kopi
     switch (opt) {
-    case 1:
-        cout << "Berhasil membeli Cappucino." << endl;
-        break;
-    
-    case 2:
-        cout << "Berhasil membeli Amerikano." << endl;
-        break;
-    case 3:
-        cout << "Berhasil membeli Espresso." << endl;
-        break;
-    case 4:
-        cout << "Berhasil membeli Late." << endl;
-        break;
-    case 5:
-        cout << "Berhasil membeli Moccacino." << endl;
-        break;
-
-    default:
-        cout << "Pilihan tidak tersedia." << endl;
-        break;
+        // Jika 1, tampilkan pesan pembelian Cappucino
+        case 1:
+            cout << "Berhasil membeli Cappucino." << endl;
+            break;
+        // Jika 2, tampilkan pesan pembelian Amerikano  
+        case 2:
+            cout << "Berhasil membeli Amerikano." << endl;
+            break;
+        // Jika 3, tampilkan pesan pembelian Espresso
+        case 3:
+            cout << "Berhasil membeli Espresso." << endl;
+            break;
+        // Selain itu, tampilkan pesan pilihan tidak tersedia
+        default:
+            cout << "Pilihan tidak tersedia." << endl;
+            break;
     }
     
     return 0;

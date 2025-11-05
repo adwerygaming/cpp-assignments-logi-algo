@@ -8,77 +8,50 @@ using namespace std;
  */
 
 int main() {
+    // Deklarasi Variabel
     int opt;
+    int saldo = 10000000;
 
+    // Menampilkan Menu Pilihan Layanan ATM
     cout << "ATM Bank XYZ" << endl;
     cout << "Silahkan pilih layanan yang di inginkan." << endl;
     cout << "" << endl;
     cout << "[1] Cek Saldo" << endl;
     cout << "[2] Tarik Tunai" << endl;
-    cout << "[3] Setor Tunai" << endl;
-    cout << "[4] Transfer" << endl;
     cout << "" << endl;
 
-    int saldo = 10000000;
-
+    // Mengambil Input dari User
     cout << "Masukkan Pilihan: ";
     cin >> opt;
 
+    // Logika Pemilihan Layanan ATM
     switch (opt) {
-    case 1: {
-        cout << "Saldo Anda adalah: Rp. " << saldo << endl;
-        break;
-    }
-
-    case 2: {
-        int tarik;
-        cout << "Masukkan jumlah tarik tunai: ";
-        cin >> tarik;
-
-        if (tarik > saldo) {
-            cout << "Saldo tidak cukup untuk menarik tunai: Rp. " << tarik << endl;
-        } else {
-            saldo -= tarik;
-            cout << "Berhasil menarik tunai: Rp. " << tarik << endl;
+        // Jika 1, tampilkan saldo
+        case 1: {
+            cout << "Saldo Anda adalah: Rp. " << saldo << endl;
+            break;
         }
 
-        break;
-    }
+        // Jika 2, proses tarik tunai
+        case 2: {
+            int tarik;
+            cout << "Masukkan jumlah tarik tunai: ";
+            cin >> tarik;
 
-    case 3: {
-        int setor;
+            if (tarik > saldo) {
+                cout << "Saldo tidak cukup untuk menarik tunai: Rp. " << tarik << endl;
+            } else {
+                saldo -= tarik;
+                cout << "Berhasil menarik tunai: Rp. " << tarik << endl;
+            }
 
-        cout << "Masukkan jumlah setor tunai: ";
-        cin >> setor;
-
-        cout << "Berhasil setor tunai: Rp. " << setor << endl;
-        cout << "Saldo Anda sekarang adalah: Rp. " << saldo + setor << endl;
-        break;
-    }
-
-    case 4: {
-        string rekening;
-        int transfer;
-
-        cout << "Masukkan nomor rekening tujuan: ";
-        cin >> rekening;
-
-        cout << "Masukkan jumlah transfer: ";
-        cin >> transfer;
-
-        if (transfer > saldo) {
-            cout << "Saldo tidak cukup untuk mentransfer Rp. " << transfer << endl;
-        } else {
-            saldo -= transfer;
-            cout << "Berhasil mentransfer Rp. " << transfer << " ke rekening " << rekening << endl;
+            break;
         }
 
-        break;
-    }
-
-    default:
-        cout << "Pilihan tidak tersedia." << endl; 
-        break;
+        // Selain itu, tampilkan pesan pilihan tidak tersedia
+        default:
+            cout << "Pilihan tidak tersedia." << endl; 
+            break;
     }
 
     return 0;
