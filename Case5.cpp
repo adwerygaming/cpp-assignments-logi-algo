@@ -1,40 +1,24 @@
 #include <iostream>
 using namespace std;
 
-/**
- * @brief Program ATM Sederhana
- * 
- * @return int 
- */
-
 int main() {
     // Deklarasi Variabel
-    int opt;
-    int saldo = 10000000;
-
+    int tarik, opt, saldo = 10000000;
+    
     // Menampilkan Menu Pilihan Layanan ATM
     cout << "ATM Bank XYZ" << endl;
-    cout << "Silahkan pilih layanan yang di inginkan." << endl;
-    cout << "" << endl;
+    cout << "Silahkan pilih layanan yang di inginkan.\n" << endl;
     cout << "[1] Cek Saldo" << endl;
     cout << "[2] Tarik Tunai" << endl;
-    cout << "" << endl;
 
-    // Mengambil Input dari User
-    cout << "Masukkan Pilihan: ";
+    cout << "\nMasukkan Pilihan: "; // Mengambil Input dari User
     cin >> opt;
 
     // Logika Pemilihan Layanan ATM
     switch (opt) {
-        // Jika 1, tampilkan saldo
-        case 1: {
-            cout << "Saldo Anda adalah: Rp. " << saldo << endl;
-            break;
-        }
-
-        // Jika 2, proses tarik tunai
+        case 1: 
+            cout << "Saldo Anda adalah: Rp. " << saldo << endl; break;
         case 2: {
-            int tarik;
             cout << "Masukkan jumlah tarik tunai: ";
             cin >> tarik;
 
@@ -43,16 +27,10 @@ int main() {
             } else {
                 saldo -= tarik;
                 cout << "Berhasil menarik tunai: Rp. " << tarik << endl;
-            }
-
-            break;
+            } break;
         }
-
-        // Selain itu, tampilkan pesan pilihan tidak tersedia
         default:
-            cout << "Pilihan tidak tersedia." << endl; 
-            break;
+            cout << "Pilihan tidak tersedia." << endl; break;
     }
-
     return 0;
 }

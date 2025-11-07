@@ -1,31 +1,19 @@
 #include <iostream>
 using namespace std;
 
-/**
- * @brief Program Validasi Input dan Pemberian Nilai pada Mahasiswa
- * 
- * @return int 
- */
-
 int main() {
-    // Deklarasi Variabel
-    string assignment;
-    string student_npm;
+    string assignment, student_npm; // Deklarasi Variabel  
     float grade;
 
-    // Mengambil Input dari User
-    cout << "Masukkan Nama Matkul : "; 
+    cout << "Masukkan Nama Matkul : "; // Mengambil Input dari User
     getline(cin, assignment);
-
     cout << "Masukkan NPM Mahasiswa : "; 
     getline(cin, student_npm);
-
     cout << "Masukkan Nilai : "; 
     cin >> grade;
 
     // Logika Validasi Input
-    if (assignment.empty() || student_npm.empty() || grade < 0) {
-        // Jika ada input yang kosong atau nilai negatif, tampilkan pesan error
+    if (assignment.empty() || student_npm.empty() || grade < 0) { 
         cout << "Mohon untuk mencantumkan informasi assignment, student_npm dan grade. Semua harus lengkap." << endl;
         return 0;
     }
