@@ -7,35 +7,14 @@ enum OpsiUsia {
     LANSIA = 3
 };
 
-void CreatePurchase(int price, string usiaStr) {
-    cout << "Pembelian Tiket " << usiaStr << " Berhasil. Silahkan ambil tiket di printer bawah ini.";
-}
-
-void ConfirmPurchase(int price, string usiaStr, int quantity) {
-    char confirm;
-
-    cout << "Konfirmasi pembelikan " << quantity << "x tiket untuk " << usiaStr << " seharga " << price << endl;
-    cout << "Lanjut Beli? [Y/N] >> ";
-    cin >> confirm;
-
-    switch (confirm) {
-        case 'Y': {
-            CreatePurchase(price, usiaStr);
-            break;
-        }
-        case 'y': {
-            CreatePurchase(price, usiaStr);
-            break;
-        }
-        default: {
-            cout << "Pembelian Dibatalkan.";
-        };
-    }
-}
+// Forward declarations
+void Menu();
+void SelectUsia(int opt, OpsiUsia usia, string usiaStr, int price);
+void ConfirmPurchase(int price, string usiaStr, int quantity);
+void CreatePurchase(int price, string usiaStr);
 
 void Menu() {
     int opt;
-    int quantity = 1;
     int price;
 
     OpsiUsia usia;
@@ -51,6 +30,44 @@ void Menu() {
 
     cout << "Pilih Opsi >> ";
     cin >> opt;
+
+    SelectUsia(opt, usia, usiaStr, price);
+
+    return;
+}
+
+void CreatePurchase(int price, string usiaStr) {
+    cout << "Pembelian Tiket " << usiaStr << " Berhasil. Silahkan ambil tiket di printer bawah ini." << endl;
+    cout << endl;
+    Menu();  // Return to menu after successful purchase
+}
+
+void ConfirmPurchase(int price, string usiaStr, int quantity) {
+    char confirm;
+
+    cout << "Konfirmasi pembelikan " << quantity << "x tiket untuk " << usiaStr << " seharga " << price << endl;
+    cout << "Lanjut Beli? [Y/N] >> ";
+    cin >> confirm;
+
+    switch (confirm) {
+        case 'Y':
+        case 'y': {
+            CreatePurchase(price, usiaStr);
+            break;
+        }
+        default: {
+            cout << "Pembelian Dibatalkan." << endl;
+            cout << endl;
+            Menu();  // Return to menu after cancellation
+            break;
+        }
+    }
+
+    return;
+}
+
+void SelectUsia(int opt, OpsiUsia usia, string usiaStr, int price) {
+    int quantity = 1;
 
     switch (opt) {
         case (1): {
