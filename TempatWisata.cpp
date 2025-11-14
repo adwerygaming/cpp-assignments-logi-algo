@@ -11,10 +11,10 @@ void CreatePurchase(int price, string usiaStr) {
     cout << "Pembelian Tiket " << usiaStr << " Berhasil. Silahkan ambil tiket di printer bawah ini.";
 }
 
-void ConfirmPurchase(int price, string usiaStr) {
+void ConfirmPurchase(int price, string usiaStr, int quantity) {
     char confirm;
 
-    cout << "Konfirmasi pembelikan tiket untuk " << usiaStr << " seharga " << price << endl;
+    cout << "Konfirmasi pembelikan " << quantity << "x tiket untuk " << usiaStr << " seharga " << price << endl;
     cout << "Lanjut Beli? [Y/N] >> ";
     cin >> confirm;
 
@@ -35,7 +35,7 @@ void ConfirmPurchase(int price, string usiaStr) {
 
 int Menu() {
     int opt;
-    int count = 1;
+    int quantity = 1;
     int price;
     OpsiUsia usia;
     string usiaStr;
@@ -78,11 +78,11 @@ int Menu() {
     }
 
     cout << "Masukkan jumlah tiket yang ingin dibeli (skip untuk 1 org) >> ";
-    cin >> count;
+    cin >> quantity;
 
-    price = price * count;
+    price = price * quantity;
 
-    ConfirmPurchase(price, usiaStr);
+    ConfirmPurchase(price, usiaStr, quantity);
     return 0;
 }
 
