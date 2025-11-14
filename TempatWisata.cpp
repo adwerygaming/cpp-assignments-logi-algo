@@ -35,6 +35,7 @@ void ConfirmPurchase(int price, string usiaStr) {
 
 int Menu() {
     int opt;
+    int count = 1;
     int price;
     OpsiUsia usia;
     string usiaStr;
@@ -75,6 +76,11 @@ int Menu() {
             return 0;
         }
     }
+
+    cout << "Masukkan jumlah tiket yang ingin dibeli (skip untuk 1 org) >> ";
+    cin >> count;
+
+    price = price * count;
 
     ConfirmPurchase(price, usiaStr);
     return 0;
