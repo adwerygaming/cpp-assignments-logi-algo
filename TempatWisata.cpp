@@ -33,10 +33,11 @@ void ConfirmPurchase(int price, string usiaStr, int quantity) {
     }
 }
 
-int Menu() {
+void Menu() {
     int opt;
     int quantity = 1;
     int price;
+
     OpsiUsia usia;
     string usiaStr;
 
@@ -70,10 +71,9 @@ int Menu() {
             usiaStr = "LANSIA";
             break;
         };
-
         default: {
             cout << "Maaf, opsi tidak tersedia. Silahkan coba lagi.";
-            return 0;
+            return;
         }
     }
 
@@ -83,7 +83,7 @@ int Menu() {
     price = price * quantity;
 
     ConfirmPurchase(price, usiaStr, quantity);
-    return 0;
+    return;
 }
 
 int main() {
