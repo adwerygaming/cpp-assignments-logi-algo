@@ -1,36 +1,42 @@
-# Prerequisites
-*.d
+# dependencies (bun install)
+node_modules
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# output
+out
+dist
+*.tgz
 
-# Precompiled Headers
-*.gch
-*.pch
+# code coverage
+coverage
+*.lcov
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
-# Fortran module files
-*.mod
-*.smod
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
 
-# Executables
-*.exe
-*.out
-*.app
+# IntelliJ based IDEs
+.idea
 
-bin/
-./bin/
-bin/*
+# Finder (MacOS) folder config
+.DS_Store
+
+quickdb.json
+quickdb2.json
+/src/generated/prisma
+
+/src/generated/prisma
+
+/src/generated/prisma
