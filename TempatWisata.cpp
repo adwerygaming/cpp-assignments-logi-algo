@@ -15,10 +15,6 @@ void CreatePurchase(int price, string usiaStr);
 
 void Menu() {
     int opt;
-    int price;
-
-    OpsiUsia usia;
-    string usiaStr;
 
     cout << "Mesin tiket wisata" << endl;
     cout << "Silahkah pilih menu dibawah ini." << endl;
@@ -31,12 +27,12 @@ void Menu() {
     cout << "Pilih Opsi >> ";
     cin >> opt;
 
-    SelectUsia(opt, usia, usiaStr, price);
+    SelectUsia(opt, ANAK_ANAK, "", 0);  // Dummy initial values; SelectUsia will set them based on opt
 
     return;
 }
 
-void CreatePurchase(int price, string usiaStr) {
+void CreatePurchase(int /*price*/, string usiaStr) {
     cout << "Pembelian Tiket " << usiaStr << " Berhasil. Silahkan ambil tiket di printer bawah ini." << endl;
     cout << endl;
     Menu();  // Return to menu after successful purchase
@@ -66,30 +62,31 @@ void ConfirmPurchase(int price, string usiaStr, int quantity) {
     return;
 }
 
-void SelectUsia(int opt, OpsiUsia usia, string usiaStr, int price) {
+void SelectUsia(int opt, OpsiUsia /*usia*/, string /*usiaStr*/, int /*price*/) {
     int quantity = 1;
+    int finalPrice = 0;
+    string finalUsiaStr = "";
 
     switch (opt) {
         case (1): {
-            price = 25000;
-            usia = ANAK_ANAK;
-            usiaStr = "ANAK-ANAK";
+            finalPrice = 25000;
+            finalUsiaStr = "ANAK-ANAK";
             break;
         };
         case (2): {    
-            price = 50000;
-            usia = DEWASA;
-            usiaStr = "DEWASA";
+            finalPrice = 50000;
+            finalUsiaStr = "DEWASA";
             break;
         };
         case (3): {
-            price = 33000;
-            usia = LANSIA;
-            usiaStr = "LANSIA";
+            finalPrice = 33000;
+            finalUsiaStr = "LANSIA";
             break;
         };
         default: {
-            cout << "Maaf, opsi tidak tersedia. Silahkan coba lagi.";
+            cout << "Maaf, opsi tidak tersedia. Silahkan coba lagi." << endl;
+            cout << endl;
+            Menu();  // Return to menu on invalid option
             return;
         }
     }
@@ -97,9 +94,9 @@ void SelectUsia(int opt, OpsiUsia usia, string usiaStr, int price) {
     cout << "Masukkan jumlah tiket yang ingin dibeli (skip untuk 1 org) >> ";
     cin >> quantity;
 
-    price = price * quantity;
+    finalPrice = finalPrice * quantity;
 
-    ConfirmPurchase(price, usiaStr, quantity);
+    ConfirmPurchase(finalPrice, finalUsiaStr, quantity);
     return;
 }
 
