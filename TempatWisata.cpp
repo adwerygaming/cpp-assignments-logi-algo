@@ -6,7 +6,7 @@ enum OpsiUsia {
     DEWASA = 2,
     LANSIA = 3
 };
-
+ 
 // Forward declarations
 void Menu();
 void SelectUsia(int opt, OpsiUsia usia, string usiaStr, int price);
